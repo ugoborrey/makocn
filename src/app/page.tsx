@@ -2,8 +2,25 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        {/* Font Debug Section */}
+        <div className="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+          <h2 className="text-xl font-bold mb-2">Font Debug Test</h2>
+          <div className="space-y-2">
+            <p className="font-sans">Default font-sans: The quick brown fox jumps</p>
+            <p style={{fontFamily: 'var(--font-rubix-mc)'}}>CSS Variable: The quick brown fox jumps</p>
+            <p style={{fontFamily: 'rubixMC'}}>Direct rubixMC: The quick brown fox jumps</p>
+            <p className="font-light">Light (300): The quick brown fox jumps</p>
+            <p className="font-normal">Normal (400): The quick brown fox jumps</p>
+            <p className="font-medium">Medium (500): The quick brown fox jumps</p>
+            <p className="font-semibold">SemiBold (600): The quick brown fox jumps</p>
+            <p className="font-bold">Bold (700): The quick brown fox jumps</p>
+            <p className="font-extrabold">ExtraBold (800): The quick brown fox jumps</p>
+            <p className="font-black">Black (900): The quick brown fox jumps</p>
+          </div>
+        </div>
+
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -12,10 +29,10 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-mono">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-mono font-semibold">
               src/app/page.tsx
             </code>
             .

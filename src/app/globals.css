@@ -1,26 +1,215 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Mako Design System Colors */
+  --color-mako-blue-10: #FBFDFE;
+  --color-mako-blue-25: #F6FAFD;
+  --color-mako-blue-50: #EEF6FC;
+  --color-mako-blue-100: #D8ECF8;
+  --color-mako-blue-200: #BADEF3;
+  --color-mako-blue-300: #8ACAEA;
+  --color-mako-blue-400: #56AEE1;
+  --color-mako-blue-500: #2F8DDA;
+  --color-mako-blue-600: #2671D9;
+  --color-mako-blue-700: #265FD9;
+  --color-mako-blue-800: #204DB6;
+  --color-mako-blue-900: #19448F;
+  --color-mako-blue-950: #051E50;
+  
+  --color-mako-yellow-10: #FFFEF5;
+  --color-mako-yellow-25: #FFFEF0;
+  --color-mako-yellow-50: #FFFEEA;
+  --color-mako-yellow-100: #FFF9C5;
+  --color-mako-yellow-200: #FFF285;
+  --color-mako-yellow-300: #FFE546;
+  --color-mako-yellow-400: #FFD700;
+  --color-mako-yellow-500: #FFB400;
+  --color-mako-yellow-600: #E28A00;
+  --color-mako-yellow-700: #BB6002;
+  --color-mako-yellow-800: #984A08;
+  --color-mako-yellow-900: #7C3D0B;
+  --color-mako-yellow-950: #481F00;
+  
+  --color-mako-green-10: #FAFFFC;
+  --color-mako-green-25: #F5FEFA;
+  --color-mako-green-50: #EFFEF6;
+  --color-mako-green-100: #DBFBEC;
+  --color-mako-green-200: #BAF7DA;
+  --color-mako-green-300: #84F1BD;
+  --color-mako-green-400: #3EEA99;
+  --color-mako-green-500: #17D079;
+  --color-mako-green-600: #00C66A;
+  --color-mako-green-700: #009550;
+  --color-mako-green-800: #007B43;
+  --color-mako-green-900: #00673A;
+  --color-mako-green-950: #00341E;
+  
+  --color-mako-red-10: #FEFBFB;
+  --color-mako-red-25: #FEF7F6;
+  --color-mako-red-50: #FDF4F3;
+  --color-mako-red-100: #FCE6E4;
+  --color-mako-red-200: #FBD1CD;
+  --color-mako-red-300: #F7B0AA;
+  --color-mako-red-400: #F08379;
+  --color-mako-red-500: #E55A4E;
+  --color-mako-red-600: #D23D30;
+  --color-mako-red-700: #BA3327;
+  --color-mako-red-800: #922B22;
+  --color-mako-red-900: #792A23;
+  --color-mako-red-950: #42110D;
+  
+  --color-mako-purple-10: #FAFBFF;
+  --color-mako-purple-25: #F5F6FF;
+  --color-mako-purple-50: #EEF0FF;
+  --color-mako-purple-100: #E0E3FF;
+  --color-mako-purple-200: #C7CAFE;
+  --color-mako-purple-300: #A5A8FC;
+  --color-mako-purple-400: #8781F8;
+  --color-mako-purple-500: #7463F1;
+  --color-mako-purple-600: #6748E5;
+  --color-mako-purple-700: #5838CA;
+  --color-mako-purple-800: #4730A3;
+  --color-mako-purple-900: #3D2E81;
+  --color-mako-purple-950: #251B4B;
+  
+  --color-mako-neutral-10: #FCFDFD;
+  --color-mako-neutral-25: #F8FAFB;
+  --color-mako-neutral-50: #F1F3F5;
+  --color-mako-neutral-100: #EBF1F4;
+  --color-mako-neutral-200: #DBE4EA;
+  --color-mako-neutral-300: #C4D2DD;
+  --color-mako-neutral-400: #ACBCCD;
+  --color-mako-neutral-500: #96A7BE;
+  --color-mako-neutral-600: #7F8EAC;
+  --color-mako-neutral-700: #78849E;
+  --color-mako-neutral-800: #59647A;
+  --color-mako-neutral-900: #4C5463;
+  --color-mako-neutral-950: #2C303A;
+  
+  --color-mako-black: #1A1A1A;
+  --color-mako-white: #FFFFFF;
+
+  /* Font family - using CSS variable from next/font/local */
+  --font-sans: var(--font-rubix-mc), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Original shadcn theme mappings updated with Mako colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.25rem;
+  
+  /* Updated to use Mako colors */
+  --background: var(--color-mako-white);
+  --foreground: var(--color-mako-neutral-950);
+  --card: var(--color-mako-white);
+  --card-foreground: var(--color-mako-neutral-950);
+  --popover: var(--color-mako-white);
+  --popover-foreground: var(--color-mako-neutral-950);
+  --primary: var(--color-mako-blue-600);
+  --primary-foreground: var(--color-mako-white);
+  --secondary: var(--color-mako-neutral-100);
+  --secondary-foreground: var(--color-mako-neutral-900);
+  --muted: var(--color-mako-neutral-100);
+  --muted-foreground: var(--color-mako-neutral-500);
+  --accent: var(--color-mako-neutral-100);
+  --accent-foreground: var(--color-mako-neutral-900);
+  --destructive: var(--color-mako-red-600);
+  --border: var(--color-mako-neutral-200);
+  --input: var(--color-mako-neutral-200);
+  --ring: var(--color-mako-blue-600);
+  --chart-1: var(--color-mako-blue-500);
+  --chart-2: var(--color-mako-green-500);
+  --chart-3: var(--color-mako-yellow-500);
+  --chart-4: var(--color-mako-purple-500);
+  --chart-5: var(--color-mako-red-500);
+  --sidebar: var(--color-mako-white);
+  --sidebar-foreground: var(--color-mako-neutral-950);
+  --sidebar-primary: var(--color-mako-blue-600);
+  --sidebar-primary-foreground: var(--color-mako-white);
+  --sidebar-accent: var(--color-mako-neutral-100);
+  --sidebar-accent-foreground: var(--color-mako-neutral-900);
+  --sidebar-border: var(--color-mako-neutral-200);
+  --sidebar-ring: var(--color-mako-blue-600);
+}
+
+.dark {
+  --background: var(--color-mako-neutral-950);
+  --foreground: var(--color-mako-white);
+  --card: var(--color-mako-neutral-900);
+  --card-foreground: var(--color-mako-white);
+  --popover: var(--color-mako-neutral-900);
+  --popover-foreground: var(--color-mako-white);
+  --primary: var(--color-mako-blue-500);
+  --primary-foreground: var(--color-mako-white);
+  --secondary: var(--color-mako-neutral-800);
+  --secondary-foreground: var(--color-mako-white);
+  --muted: var(--color-mako-neutral-800);
+  --muted-foreground: var(--color-mako-neutral-400);
+  --accent: var(--color-mako-neutral-800);
+  --accent-foreground: var(--color-mako-white);
+  --destructive: var(--color-mako-red-500);
+  --border: var(--color-mako-neutral-800);
+  --input: var(--color-mako-neutral-700);
+  --ring: var(--color-mako-blue-500);
+  --chart-1: var(--color-mako-blue-400);
+  --chart-2: var(--color-mako-green-400);
+  --chart-3: var(--color-mako-yellow-400);
+  --chart-4: var(--color-mako-purple-400);
+  --chart-5: var(--color-mako-red-400);
+  --sidebar: var(--color-mako-neutral-900);
+  --sidebar-foreground: var(--color-mako-white);
+  --sidebar-primary: var(--color-mako-blue-500);
+  --sidebar-primary-foreground: var(--color-mako-white);
+  --sidebar-accent: var(--color-mako-neutral-800);
+  --sidebar-accent-foreground: var(--color-mako-white);
+  --sidebar-border: var(--color-mako-neutral-800);
+  --sidebar-ring: var(--color-mako-blue-500);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
 }

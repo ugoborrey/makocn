@@ -149,7 +149,7 @@
   --secondary: var(--color-mako-neutral-100);
   --secondary-foreground: var(--color-mako-neutral-900);
   --muted: var(--color-mako-neutral-100);
-  --muted-foreground: var(--color-mako-neutral-500);
+  --muted-foreground: var(--color-mako-neutral-800);
   --accent: var(--color-mako-neutral-100);
   --accent-foreground: var(--color-mako-neutral-900);
   --destructive: var(--color-mako-red-600);

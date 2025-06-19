@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import React from 'react'
 import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -57,31 +57,31 @@ export const ColorVariants: Story = {
     <div className="flex flex-wrap gap-4">
       <Card className="w-[300px] border-mako-blue-200 bg-mako-blue-10">
         <CardHeader>
-          <CardTitle className="text-mako-blue-700">Blue Variant</CardTitle>
-          <CardDescription className="text-mako-blue-600">Using Mako blue colors</CardDescription>
+          <CardTitle className="text-mako-blue-900">Blue Variant</CardTitle>
+          <CardDescription className="text-mako-blue-800">Using Mako blue colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-blue-800">Content with blue theme integration</p>
+          <p className="text-mako-blue-950">Content with blue theme integration</p>
         </CardContent>
       </Card>
       
       <Card className="w-[300px] border-mako-green-200 bg-mako-green-10">
         <CardHeader>
-          <CardTitle className="text-mako-green-700">Green Variant</CardTitle>
-          <CardDescription className="text-mako-green-600">Using Mako green colors</CardDescription>
+          <CardTitle className="text-mako-green-900">Green Variant</CardTitle>
+          <CardDescription className="text-mako-green-800">Using Mako green colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-green-800">Content with green theme integration</p>
+          <p className="text-mako-green-950">Content with green theme integration</p>
         </CardContent>
       </Card>
       
       <Card className="w-[300px] border-mako-yellow-200 bg-mako-yellow-10">
         <CardHeader>
-          <CardTitle className="text-mako-yellow-700">Yellow Variant</CardTitle>
-          <CardDescription className="text-mako-yellow-600">Using Mako yellow colors</CardDescription>
+          <CardTitle className="text-mako-yellow-900">Yellow Variant</CardTitle>
+          <CardDescription className="text-mako-yellow-800">Using Mako yellow colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-yellow-800">Content with yellow theme integration</p>
+          <p className="text-mako-yellow-950">Content with yellow theme integration</p>
         </CardContent>
       </Card>
     </div>

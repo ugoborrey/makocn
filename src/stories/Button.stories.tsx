@@ -45,7 +45,7 @@ const SettingsIcon = () => (
 )
 
 const meta = {
-  title: 'Mako Design System/Button',
+  title: 'UI/Button',
   component: Button,
   parameters: {
     layout: 'centered',

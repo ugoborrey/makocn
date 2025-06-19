@@ -4,7 +4,7 @@ import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 import { Button } from '@/components/ui/button'
 
 const meta = {
-  title: 'Mako Design System/Card',
+  title: 'UI/Card',
   component: Card,
   parameters: {
     layout: 'centered',

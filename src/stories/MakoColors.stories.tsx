@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 
 const meta = {
-  title: 'Mako Design System/Colors',
+  title: 'Design Tokens/Colors',
   parameters: {
     layout: 'fullscreen',
     docs: {

@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import NumberInput from '@/components/ui/number-input';
-import { useState } from 'react';
-import { MinusIcon, PlusIcon } from 'lucide-react';
 
 const meta = {
   title: 'UI/NumberInput',

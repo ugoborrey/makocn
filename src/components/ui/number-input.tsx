@@ -1,7 +1,7 @@
 "use client"
 
 import { MinusIcon, PlusIcon } from "lucide-react"
-import { Button, Group, Input, Label, NumberField } from "react-aria-components"
+import { Button, Group, Input, NumberField } from "react-aria-components"
 import { useState } from "react"
 
 interface NumberInputProps {

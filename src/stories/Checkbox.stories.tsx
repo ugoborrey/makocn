@@ -67,9 +67,47 @@ export const DisabledChecked: Story = {
 }
 
 export const Indeterminate: Story = {
-  args: {
-    checked: 'indeterminate',
+  render: function IndeterminateCheckbox(args) {
+    const [checked, setChecked] = React.useState<boolean>(false)
+    const [isIndeterminate, setIsIndeterminate] = React.useState(true)
+    
+    const handleCheckedChange = (newChecked: boolean) => {
+      setChecked(newChecked)
+      setIsIndeterminate(false) // Once clicked, no longer indeterminate
+    }
+    
+    const resetToIndeterminate = () => {
+      setIsIndeterminate(true)
+      setChecked(false)
+    }
+    
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center space-x-3">
+          <Checkbox 
+            {...args}
+            id="indeterminate-demo" 
+            checked={checked}
+            indeterminate={isIndeterminate}
+            onCheckedChange={handleCheckedChange}
+          />
+          <Label htmlFor="indeterminate-demo">
+            {isIndeterminate ? 'Indeterminate checkbox' : (checked ? 'Checked' : 'Unchecked')}
+          </Label>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Click the checkbox to see how it transitions from indeterminate → checked → unchecked → checked...
+        </p>
+        <button 
+          onClick={resetToIndeterminate}
+          className="px-3 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/90"
+        >
+          Reset to Indeterminate
+        </button>
+      </div>
+    )
   },
+  args: {},
 }
 
 
@@ -174,7 +212,7 @@ export const RequiredValidation: Story = {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-3">
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="newsletter-req" />
             </div>
@@ -182,7 +220,7 @@ export const RequiredValidation: Story = {
               Subscribe to newsletter (optional)
             </Label>
           </div>
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="terms-req" required />
             </div>
@@ -190,7 +228,7 @@ export const RequiredValidation: Story = {
               I agree to the <span className="underline">terms and conditions</span> *
             </Label>
           </div>
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="privacy-req" required />
             </div>
@@ -247,7 +285,7 @@ export const CustomValidation: Story = {
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-3">
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox 
                 id="newsletter-custom" 
@@ -262,7 +300,7 @@ export const CustomValidation: Story = {
             </Label>
           </div>
           
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox 
                 id="terms-custom" 
@@ -284,7 +322,7 @@ export const CustomValidation: Story = {
             </div>
           </div>
           
-          <div className="flex items-start space-x-3">
+          <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox 
                 id="privacy-custom" 
@@ -323,41 +361,3 @@ export const CustomValidation: Story = {
     )
   },
 }
-
-export const Interactive: Story = {
-  render: function InteractiveCheckbox(args) {
-    const [checked, setChecked] = React.useState<boolean | 'indeterminate'>(false)
-    
-    const cycleState = () => {
-      if (checked === false) setChecked('indeterminate')
-      else if (checked === 'indeterminate') setChecked(true)
-      else setChecked(false)
-    }
-    
-    return (
-      <div className="space-y-4">
-        <div className="flex items-center space-x-2">
-          <Checkbox 
-            {...args}
-            id="interactive" 
-            checked={checked}
-            onCheckedChange={setChecked}
-          />
-          <Label htmlFor="interactive">
-            This checkbox is {checked === true ? 'checked' : checked === 'indeterminate' ? 'indeterminate' : 'unchecked'}
-          </Label>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          State: {checked === true ? '✓ Checked' : checked === 'indeterminate' ? '◐ Indeterminate' : '✗ Unchecked'}
-        </p>
-        <button 
-          onClick={cycleState}
-          className="px-3 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/90"
-        >
-          Cycle through states
-        </button>
-      </div>
-    )
-  },
-  args: {},
-} 

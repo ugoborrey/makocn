@@ -92,7 +92,6 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
               size="sm"
               variant={action.variant || 'outline'}
               onClick={action.onClick}
-              className="text-xs"
             >
               {action.label}
             </Button>

@@ -290,36 +290,3 @@ export const AllVariants: Story = {
     },
   },
 }
-
-// Playground story
-export const Playground: Story = {
-  args: {
-    variant: 'info',
-    title: 'Playground Alert',
-    description: 'Use the controls below to customize this alert banner.',
-    closable: true,
-  },
-  render: (args) => {
-    const [isVisible, setIsVisible] = useState(true)
-    
-    if (!isVisible) {
-      return (
-        <div className="text-center p-4">
-          <p className="text-gray-500 mb-2">Alert was closed</p>
-          <Button onClick={() => setIsVisible(true)} size="sm">
-            Show Alert Again
-          </Button>
-        </div>
-      )
-    }
-    
-    return <AlertBanner {...args} onClose={() => setIsVisible(false)} />
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Interactive playground to test different alert configurations.',
-      },
-    },
-  },
-} 

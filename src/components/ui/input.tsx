@@ -16,8 +16,8 @@ const inputVariants = cva(
       state: {
         default: "",
         error: "border-destructive aria-invalid:border-destructive",
-        success: "border-green-500 dark:border-green-400",
-        warning: "border-yellow-500 dark:border-yellow-400",
+        success: "border-green-700 dark:border-green-400",
+        warning: "border-yellow-600 dark:border-yellow-400",
       },
     },
     defaultVariants: {
@@ -28,14 +28,14 @@ const inputVariants = cva(
 )
 
 const helperTextVariants = cva(
-  "text-sm mt-1.5 transition-colors",
+  "text-sm font-medium mt-1.5 transition-colors",
   {
     variants: {
       state: {
         default: "text-muted-foreground",
         error: "text-destructive",
-        success: "text-green-600 dark:text-green-400",
-        warning: "text-yellow-600 dark:text-yellow-400",
+        success: "text-green-700 dark:text-green-400",
+        warning: "text-yellow-700 dark:text-yellow-400",
       },
     },
     defaultVariants: {

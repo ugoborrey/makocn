@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import React from 'react'
 import { Checkbox } from '../components/ui/checkbox'
 import { Label } from '../components/ui/label'
+import { Button } from '../components/ui/button'
 
 const meta = {
   title: 'UI/Checkbox',
@@ -91,7 +92,7 @@ export const Indeterminate: Story = {
             indeterminate={isIndeterminate}
             onCheckedChange={handleCheckedChange}
           />
-          <Label htmlFor="indeterminate-demo">
+          <Label htmlFor="indeterminate-demo" className="cursor-pointer">
             {isIndeterminate ? 'Indeterminate checkbox' : (checked ? 'Checked' : 'Unchecked')}
           </Label>
         </div>
@@ -122,7 +123,7 @@ export const WithLabelChecked: Story = {
   render: (args) => (
     <div className="flex items-center space-x-3">
       <Checkbox {...args} id="terms-checked" />
-      <Label htmlFor="terms-checked">Accept terms and conditions</Label>
+      <Label htmlFor="terms-checked" className="cursor-pointer">Accept terms and conditions</Label>
     </div>
   ),
   args: {
@@ -134,7 +135,7 @@ export const WithLabelDisabled: Story = {
   render: (args) => (
     <div className="flex items-center space-x-3">
       <Checkbox {...args} id="terms-disabled" />
-      <Label htmlFor="terms-disabled" className="text-muted-foreground">
+      <Label htmlFor="terms-disabled" className="text-muted-foreground cursor-pointer">
         Accept terms and conditions
       </Label>
     </div>
@@ -149,16 +150,16 @@ export const FormExample: Story = {
     <div className="space-y-4">
       <div className="flex items-center space-x-3">
         <Checkbox id="newsletter" defaultChecked />
-        <Label htmlFor="newsletter">Subscribe to newsletter</Label>
+        <Label htmlFor="newsletter" className="cursor-pointer">Subscribe to newsletter</Label>
       </div>
       <div className="flex items-center space-x-3">
         <Checkbox id="updates" />
-        <Label htmlFor="updates">Get product updates (large checkbox)</Label>
+        <Label htmlFor="updates" className="cursor-pointer">Get product updates (large checkbox)</Label>
       </div>
       <div className="flex items-center space-x-3">
         <Checkbox id="terms" required defaultChecked />
-        <Label htmlFor="terms">
-          I agree to the <span className="underline">terms and conditions</span>
+        <Label htmlFor="terms" className="inline cursor-pointer">
+          I agree to the <Button variant="link" className="h-auto p-0 m-0 gap-0">terms and conditions</Button>
         </Label>
       </div>
     </div>
@@ -173,11 +174,11 @@ export const SizeComparison: Story = {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <Checkbox id="default-unchecked" />
-            <Label htmlFor="default-unchecked">Unchecked</Label>
+            <Label htmlFor="default-unchecked" className="cursor-pointer">Unchecked</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="default-checked" defaultChecked />
-            <Label htmlFor="default-checked">Checked</Label>
+            <Label htmlFor="default-checked" className="cursor-pointer">Checked</Label>
           </div>
         </div>
       </div>
@@ -186,11 +187,11 @@ export const SizeComparison: Story = {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <Checkbox id="large-unchecked" size="lg" />
-            <Label htmlFor="large-unchecked">Unchecked</Label>
+            <Label htmlFor="large-unchecked" className="cursor-pointer">Unchecked</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="large-checked" size="lg" defaultChecked />
-            <Label htmlFor="large-checked">Checked</Label>
+            <Label htmlFor="large-checked" className="cursor-pointer">Checked</Label>
           </div>
         </div>
       </div>
@@ -216,7 +217,7 @@ export const RequiredValidation: Story = {
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="newsletter-req" />
             </div>
-            <Label htmlFor="newsletter-req" className="leading-tight">
+            <Label htmlFor="newsletter-req" className="leading-tight cursor-pointer">
               Subscribe to newsletter (optional)
             </Label>
           </div>
@@ -224,16 +225,16 @@ export const RequiredValidation: Story = {
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="terms-req" required />
             </div>
-            <Label htmlFor="terms-req" className="leading-tight">
-              I agree to the <span className="underline">terms and conditions</span> *
+            <Label htmlFor="terms-req" className="leading-tight inline cursor-pointer">
+              I agree to the <Button variant="link" className="h-auto p-0 m-0 gap-0">terms and conditions</Button>*
             </Label>
           </div>
           <div className="flex items-center space-x-3">
             <div className="flex-shrink-0 pt-0.5">
               <Checkbox id="privacy-req" required />
             </div>
-            <Label htmlFor="privacy-req" className="leading-tight">
-              I accept the <span className="underline">privacy policy</span> *
+            <Label htmlFor="privacy-req" className="leading-tight inline cursor-pointer">
+              I accept the <Button variant="link" className="h-auto p-0 m-0 gap-0">privacy policy</Button>*
             </Label>
           </div>
         </div>
@@ -295,7 +296,7 @@ export const CustomValidation: Story = {
                 }
               />
             </div>
-            <Label htmlFor="newsletter-custom" className="leading-tight">
+            <Label htmlFor="newsletter-custom" className="leading-tight cursor-pointer">
               Subscribe to newsletter (optional)
             </Label>
           </div>
@@ -313,8 +314,8 @@ export const CustomValidation: Story = {
               />
             </div>
             <div className="flex-1">
-              <Label htmlFor="terms-custom" className="leading-tight">
-                I agree to the <span className="underline">terms and conditions</span> *
+              <Label htmlFor="terms-custom" className="leading-tight inline cursor-pointer">
+                I agree to the <Button variant="link" className="h-auto p-0 m-0 gap-0">terms and conditions</Button> *
               </Label>
               {errors.includes('terms') && (
                 <p className="text-sm text-red-500 mt-1">Please accept the terms and conditions</p>
@@ -335,8 +336,8 @@ export const CustomValidation: Story = {
               />
             </div>
             <div className="flex-1">
-              <Label htmlFor="privacy-custom" className="leading-tight">
-                I accept the <span className="underline">privacy policy</span> *
+              <Label htmlFor="privacy-custom" className="leading-tight inline cursor-pointer">
+                I accept the <Button variant="link" className="h-auto p-0 m-0 gap-0">privacy policy</Button> *
               </Label>
               {errors.includes('privacy') && (
                 <p className="text-sm text-red-500 mt-1">Please accept the privacy policy</p>

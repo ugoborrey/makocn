@@ -48,8 +48,8 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   render: (args) => (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label htmlFor="file-upload" className="text-sm font-medium">
+    <div className="space-y-1.5">
+      <Label htmlFor="file-upload">
         Upload Document
       </Label>
       <BasicFileInput
@@ -93,8 +93,8 @@ export const Disabled: Story = {
 // Image Uploader Stories
 export const ImageUpload: Story = {
   render: () => (
-    <div className="space-y-4">
-      <Label className="text-sm font-medium">Profile Picture</Label>
+    <div className="space-y-1.5">
+      <Label>Profile Picture</Label>
       <ImageUploader maxSize={5} />
     </div>
   ),
@@ -102,8 +102,8 @@ export const ImageUpload: Story = {
 
 export const SmallImageUpload: Story = {
   render: () => (
-    <div className="space-y-4">
-      <Label className="text-sm font-medium">Avatar (Max 1MB)</Label>
+    <div className="space-y-1.5">
+      <Label>Avatar (Max 1MB)</Label>
       <ImageUploader maxSize={1} />
     </div>
   ),
@@ -112,8 +112,8 @@ export const SmallImageUpload: Story = {
 // Document Uploader Stories
 export const DocumentUpload: Story = {
   render: () => (
-    <div className="space-y-4">
-      <Label className="text-sm font-medium">Upload Documents</Label>
+    <div className="space-y-1.5">
+      <Label>Upload Documents</Label>
       <DocumentUploader />
     </div>
   ),
@@ -121,8 +121,8 @@ export const DocumentUpload: Story = {
 
 export const PDFOnlyUpload: Story = {
   render: () => (
-    <div className="space-y-4">
-      <Label className="text-sm font-medium">PDF Upload</Label>
+    <div className="space-y-1.5">
+      <Label>PDF Upload</Label>
       <DocumentUploader 
         accept=".pdf" 
         maxSize={5}
@@ -134,8 +134,8 @@ export const PDFOnlyUpload: Story = {
 
 export const CustomDragDrop: Story = {
   render: () => (
-    <div className="space-y-4">
-      <Label className="text-sm font-medium">Custom Upload Area</Label>
+    <div className="space-y-1.5">
+      <Label>Custom Upload Area</Label>
       <DocumentUploader 
         accept=".jpg,.jpeg,.png,.pdf"
         maxSize={15}
@@ -162,8 +162,8 @@ export const FormExample: Story = {
       <form className="grid w-full max-w-md gap-6 p-6 border rounded-lg">
         <h3 className="text-lg font-semibold">Job Application</h3>
         
-        <div>
-          <Label className="text-sm font-medium mb-2 block">
+        <div className="space-y-1.5">
+          <Label>
             Resume/CV *
           </Label>
           <BasicFileInput
@@ -174,8 +174,8 @@ export const FormExample: Story = {
           />
         </div>
         
-        <div>
-          <Label className="text-sm font-medium mb-2 block">
+        <div className="space-y-1.5">
+          <Label>
             Cover Letter
           </Label>
           <DocumentUploader
@@ -186,8 +186,8 @@ export const FormExample: Story = {
           />
         </div>
         
-        <div>
-          <Label className="text-sm font-medium mb-2 block">
+        <div className="space-y-1.5">
+          <Label>
             Portfolio Images
           </Label>
           <ImageUploader
@@ -292,8 +292,8 @@ export const ValidationDemo: Story = {
 
     return (
       <div className="w-full max-w-lg space-y-6">
-        <div>
-          <Label className="text-sm font-medium mb-2 block">
+        <div className="space-y-1.5">
+          <Label>
             Test Upload (PDF only, max 2MB)
           </Label>
           <BasicFileInput

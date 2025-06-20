@@ -37,10 +37,10 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   render: (args) => (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+    <div className="space-y-1.5">
+      <Label htmlFor="email" className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
         Email
-      </label>
+      </Label>
       <Input id="email" type="email" placeholder="Enter your email" {...args} />
     </div>
   ),
@@ -63,16 +63,16 @@ export const Disabled: Story = {
 
 export const WithError: Story = {
   render: () => (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label htmlFor="error-input" className="text-base">Username</Label>
+    <div className="space-y-1.5">
+      <Label htmlFor="error-input">Username</Label>
       <Input
         type="text"
         id="error-input"
         placeholder="Enter username"
         aria-invalid="true"
         className="border-destructive"
+        error="Username is required"
       />
-      <p className="text-sm text-destructive">Username is required</p>
     </div>
   ),
 };
@@ -84,36 +84,13 @@ export const SearchInput: Story = {
   },
 };
 
-export const Number: Story = {
-  args: {
-    type: 'number',
-    placeholder: 'Enter a number',
-    min: 0,
-    max: 100,
-  },
-};
-
-export const File: Story = {
-  args: {
-    type: 'file',
-    accept: '.pdf,.doc,.docx',
-  },
-};
-
-export const WithValue: Story = {
-  args: {
-    defaultValue: 'Pre-filled value',
-    placeholder: 'This won\'t show',
-  },
-};
-
 export const FormExample: Story = {
   render: () => (
     <form className="grid w-full max-w-sm gap-4 p-4 border rounded-lg">
       <h3 className="text-lg font-semibold">Sign Up Form</h3>
       
-      <div>
-        <label htmlFor="name" className="text-sm font-medium">Full Name</label>
+      <div className="space-y-1.5">
+        <Label htmlFor="name">Full Name</Label>
         <Input 
           id="name"
           placeholder="John Doe" 
@@ -121,8 +98,8 @@ export const FormExample: Story = {
         />
       </div>
       
-      <div>
-        <label htmlFor="email" className="text-sm font-medium">Email</label>
+      <div className="space-y-1.5">
+        <Label htmlFor="email">Email</Label>
         <Input 
           id="email"
           type="email"
@@ -131,8 +108,8 @@ export const FormExample: Story = {
         />
       </div>
       
-      <div>
-        <label htmlFor="password" className="text-sm font-medium">Password</label>
+      <div className="space-y-1.5">
+        <Label htmlFor="password">Password</Label>
         <Input 
           id="password"
           type="password"
@@ -142,8 +119,8 @@ export const FormExample: Story = {
         />
       </div>
       
-      <div>
-        <label htmlFor="confirm" className="text-sm font-medium">Confirm Password</label>
+      <div className="space-y-1.5">
+        <Label htmlFor="confirm">Confirm Password</Label>
         <Input 
           id="confirm"
           type="password"
@@ -170,24 +147,24 @@ export const Sizes: Story = {
 export const ValidationStates: Story = {
   render: () => (
     <div className="grid w-full max-w-sm gap-4">
-      <div>
-        <label className="text-sm font-medium">Default State</label>
+      <div className="space-y-1.5">
+        <Label>Default State</Label>
         <Input 
           placeholder="Enter your name" 
           helperText="This is a helper text"
         />
       </div>
       
-      <div>
-        <label className="text-sm font-medium">Error State</label>
+      <div className="space-y-1.5">
+        <Label>Error State</Label>
         <Input 
           placeholder="Enter your email" 
           error="Please enter a valid email address"
         />
       </div>
       
-      <div>
-        <label className="text-sm font-medium">Success State</label>
+      <div className="space-y-1.5">
+        <Label>Success State</Label>
         <Input 
           placeholder="Enter your password" 
           state="success"
@@ -195,8 +172,8 @@ export const ValidationStates: Story = {
         />
       </div>
       
-      <div>
-        <label className="text-sm font-medium">Warning State</label>
+      <div className="space-y-1.5">
+        <Label>Warning State</Label>
         <Input 
           placeholder="Enter your username" 
           state="warning"
@@ -209,9 +186,9 @@ export const ValidationStates: Story = {
 
 export const ErrorVariations: Story = {
   render: () => (
-    <div className="grid w-full max-w-sm gap-4">
-      <div>
-        <label className="text-sm font-medium">Error with String Message</label>
+    <div className="grid w-full gap-4">
+      <div className="space-y-1.5">
+        <Label>Error with String Message</Label>
         <Input 
           type="email"
           placeholder="john@example.com" 
@@ -219,8 +196,8 @@ export const ErrorVariations: Story = {
         />
       </div>
       
-      <div>
-        <label className="text-sm font-medium">Error Boolean (No Message)</label>
+      <div className="space-y-1.5">
+        <Label>Error Boolean (No Message)</Label>
         <Input 
           type="password"
           placeholder="Enter password" 
@@ -228,8 +205,8 @@ export const ErrorVariations: Story = {
         />
       </div>
       
-      <div>
-        <label className="text-sm font-medium">Error Overrides Helper Text</label>
+      <div className="space-y-1.5">
+        <Label>Error Overrides Helper Text</Label>
         <Input 
           type="text"
           placeholder="Enter username" 
@@ -293,10 +270,10 @@ export const DynamicHelperText: Story = {
     
     return (
       <div className="w-full max-w-sm space-y-4">
-        <div>
-          <label htmlFor="dynamic-email" className="text-sm font-medium block mb-2">
+        <div className="space-y-1.5">
+          <Label htmlFor="dynamic-email">
             Email Address
-          </label>
+          </Label>
           <Input
             id="dynamic-email"
             type="email"
@@ -370,10 +347,10 @@ export const AdvancedEmailValidation: Story = {
     
     return (
       <div className="w-full max-w-sm space-y-4">
-        <div>
-          <label htmlFor="advanced-email" className="text-sm font-medium block mb-2">
+        <div className="space-y-1.5">
+          <Label htmlFor="advanced-email">
             Work Email Address
-          </label>
+          </Label>
           <Input
             id="advanced-email"
             type="email"

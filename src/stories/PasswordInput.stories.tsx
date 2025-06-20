@@ -130,11 +130,3 @@ export const SignUpForm: Story = {
     )
   },
 }
-
-export const Disabled: Story = {
-  args: {
-    placeholder: 'Disabled password input',
-    disabled: true,
-    value: 'disabledpassword',
-  },
-} 

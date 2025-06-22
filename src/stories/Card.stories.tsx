@@ -55,33 +55,33 @@ export const WithFooter: Story = {
 export const ColorVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4">
-      <Card className="w-[300px] border-mako-blue-200 bg-mako-blue-10">
+      <Card className="w-[300px] border-blue-200 bg-blue-10">
         <CardHeader>
-          <CardTitle className="text-mako-blue-900">Blue Variant</CardTitle>
-          <CardDescription className="text-mako-blue-800">Using Mako blue colors</CardDescription>
+          <CardTitle className="text-blue-900">Blue Variant</CardTitle>
+          <CardDescription className="text-blue-800">Using Mako blue colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-blue-950">Content with blue theme integration</p>
+          <p className="text-blue-950">Content with blue theme integration</p>
         </CardContent>
       </Card>
       
-      <Card className="w-[300px] border-mako-green-200 bg-mako-green-10">
+      <Card className="w-[300px] border-green-200 bg-green-10">
         <CardHeader>
-          <CardTitle className="text-mako-green-900">Green Variant</CardTitle>
-          <CardDescription className="text-mako-green-800">Using Mako green colors</CardDescription>
+          <CardTitle className="text-green-900">Green Variant</CardTitle>
+          <CardDescription className="text-green-800">Using Mako green colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-green-950">Content with green theme integration</p>
+          <p className="text-green-950">Content with green theme integration</p>
         </CardContent>
       </Card>
       
-      <Card className="w-[300px] border-mako-yellow-200 bg-mako-yellow-10">
+      <Card className="w-[300px] border-yellow-200 bg-yellow-10">
         <CardHeader>
-          <CardTitle className="text-mako-yellow-900">Yellow Variant</CardTitle>
-          <CardDescription className="text-mako-yellow-800">Using Mako yellow colors</CardDescription>
+          <CardTitle className="text-yellow-900">Yellow Variant</CardTitle>
+          <CardDescription className="text-yellow-800">Using Mako yellow colors</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-mako-yellow-950">Content with yellow theme integration</p>
+          <p className="text-yellow-950">Content with yellow theme integration</p>
         </CardContent>
       </Card>
     </div>
@@ -99,15 +99,15 @@ export const InteractiveCard: Story = {
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Availability</span>
-            <span className="text-sm text-mako-green-600 font-semibold">In Stock</span>
+            <span className="text-sm text-green-600 font-semibold">In Stock</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Category</span>
-            <span className="text-sm text-mako-neutral-600">Power Tools</span>
+            <span className="text-sm text-gray-600">Power Tools</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Price</span>
-            <span className="text-lg font-bold text-mako-blue-600">€299.99</span>
+            <span className="text-lg font-bold text-blue-600">€299.99</span>
           </div>
         </div>
       </CardContent>

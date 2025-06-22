@@ -39,7 +39,7 @@ export function Separator({
     <div 
       className={cn(
         separatorThicknesses[thickness],
-        "bg-mako-yellow-400",
+        "bg-yellow-400",
         separatorWidths[width],
         separatorAlignments[alignment],
         className

@@ -44,7 +44,7 @@ export default function NumberInput({
             slot="decrement"
             className="border-input w-8 bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -ms-px flex aspect-square h-[inherit] items-center justify-center rounded-s-md border border-r-0 text-sm transition-[color,box-shadow] cursor-pointer disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:hover:cursor-not-allowed data-disabled:opacity-50"
           >
-            <MinusIcon size={16} strokeWidth={3} className="text-mako-neutral-900" aria-hidden="true" />
+            <MinusIcon size={16} strokeWidth={3} className="text-gray-900" aria-hidden="true" />
           </Button>
           <Input
             onBlur={handleBlur}
@@ -60,7 +60,7 @@ export default function NumberInput({
             slot="increment"
             className="border-input w-8 bg-background text-muted-foreground/80 hover:bg-accent hover:text-foreground -me-px flex aspect-square h-[inherit] items-center justify-center rounded-e-md border border-l-0 text-sm transition-[color,box-shadow] cursor-pointer disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-disabled:pointer-events-none data-disabled:cursor-not-allowed data-disabled:hover:cursor-not-allowed data-disabled:opacity-50"
           >
-            <PlusIcon size={16} strokeWidth={3} className="text-mako-neutral-900" aria-hidden="true" />
+            <PlusIcon size={16} strokeWidth={3} className="text-gray-900" aria-hidden="true" />
           </Button>
       </Group>
     </NumberField>

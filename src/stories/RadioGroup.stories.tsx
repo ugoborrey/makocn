@@ -114,7 +114,7 @@ export const Horizontal: Story = {
     <RadioGroup {...args} defaultValue="small" className="flex flex-row space-x-6 space-y-0">
       <div className="flex items-center space-x-2">
         <RadioGroupItem value="small" id="size-small" />
-        <Label htmlFor="size-small">Small</Label>
+        <Label className='font-normal' htmlFor="size-small">Small</Label>
       </div>
       <div className="flex items-center space-x-2">
         <RadioGroupItem value="medium" id="size-medium" />
@@ -171,45 +171,66 @@ export const WithDescriptions: Story = {
 }
 
 export const PaymentMethods: Story = {
-  render: (args) => (
-    <Card className="w-80">
-      <CardHeader>
-        <CardTitle>Payment Method</CardTitle>
-        <CardDescription>Choose your preferred payment method</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <RadioGroup {...args} defaultValue="card">
-          <div className="flex items-center space-x-3 rounded-md border p-3">
-            <RadioGroupItem value="card" id="payment-card" />
-            <Label htmlFor="payment-card" className="cursor-pointer flex-1">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-sm"></div>
-                Credit Card
+  render: () => {
+    const [selectedPayment, setSelectedPayment] = React.useState('paypal')
+    
+    const paymentOptions = [
+      { 
+        value: 'card', 
+        label: 'Credit Card', 
+        icon: <div className="w-6 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-sm"></div> 
+      },
+      { 
+        value: 'paypal', 
+        label: 'PayPal', 
+        icon: <div className="w-6 h-4 bg-blue-600 rounded-sm"></div> 
+      },
+      { 
+        value: 'apple', 
+        label: 'Apple Pay', 
+        icon: <div className="w-6 h-4 bg-black rounded-sm"></div> 
+      },
+    ]
+    
+    return (
+      <Card className="w-80">
+        <CardHeader>
+          <CardTitle>Payment Method</CardTitle>
+          <CardDescription>Choose your preferred payment method</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <RadioGroup value={selectedPayment} onValueChange={setSelectedPayment}>
+            {paymentOptions.map((option) => (
+              <div
+                key={option.value}
+                onClick={() => setSelectedPayment(option.value)}
+                className={`flex items-center space-x-3 rounded-lg border p-3 cursor-pointer transition-all ${
+                  selectedPayment === option.value
+                    ? 'border-blue-700 bg-blue-25'
+                    : 'border-border hover:border-blue-300'
+                }`}
+              >
+                <RadioGroupItem 
+                  value={option.value} 
+                  id={`payment-${option.value}`}
+                  className="pointer-events-none"
+                />
+                <Label 
+                  htmlFor={`payment-${option.value}`} 
+                  className="cursor-pointer flex-1 pointer-events-none"
+                >
+                  <div className="flex items-center gap-2">
+                    {option.icon}
+                    {option.label}
+                  </div>
+                </Label>
               </div>
-            </Label>
-          </div>
-          <div className="flex items-center space-x-3 rounded-md border p-3">
-            <RadioGroupItem value="paypal" id="payment-paypal" />
-            <Label htmlFor="payment-paypal" className="cursor-pointer flex-1">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-blue-600 rounded-sm"></div>
-                PayPal
-              </div>
-            </Label>
-          </div>
-          <div className="flex items-center space-x-3 rounded-md border p-3">
-            <RadioGroupItem value="apple" id="payment-apple" />
-            <Label htmlFor="payment-apple" className="cursor-pointer flex-1">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-black rounded-sm"></div>
-                Apple Pay
-              </div>
-            </Label>
-          </div>
-        </RadioGroup>
-      </CardContent>
-    </Card>
-  ),
+            ))}
+          </RadioGroup>
+        </CardContent>
+      </Card>
+    )
+  },
   args: {},
 }
 
@@ -311,6 +332,60 @@ export const FormExample: Story = {
       </Card>
     )
   },
+  args: {},
+}
+
+export const LargeSize: Story = {
+  render: (args) => (
+    <RadioGroup {...args} defaultValue="option-one">
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-one" id="large-one" size="lg" />
+        <Label htmlFor="large-one">Large Option One (20px)</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-two" id="large-two" size="lg" />
+        <Label htmlFor="large-two">Large Option Two (20px)</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-three" id="large-three" size="lg" />
+        <Label htmlFor="large-three">Large Option Three (20px)</Label>
+      </div>
+    </RadioGroup>
+  ),
+  args: {},
+}
+
+export const SizeComparison: Story = {
+  render: (args) => (
+    <div className="space-y-6">
+      <div>
+        <h4 className="text-sm font-medium mb-3">Default Size (16x16px)</h4>
+        <RadioGroup {...args} defaultValue="default-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="default-one" id="size-default-one" />
+            <Label htmlFor="size-default-one">Default Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="default-two" id="size-default-two" />
+            <Label htmlFor="size-default-two">Default Option Two</Label>
+          </div>
+        </RadioGroup>
+      </div>
+      <div>
+        <h4 className="text-sm font-medium mb-3">Large Size (20x20px)</h4>
+        <RadioGroup {...args} defaultValue="large-one">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="large-one" id="size-large-one" size="lg" />
+            <Label htmlFor="size-large-one">Large Option One</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="large-two" id="size-large-two" size="lg" />
+            <Label htmlFor="size-large-two">Large Option Two</Label>
+          </div>
+        </RadioGroup>
+      </div>
+    </div>
+  ),
   args: {},
 }
 

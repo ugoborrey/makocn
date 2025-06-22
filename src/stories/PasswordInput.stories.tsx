@@ -31,13 +31,24 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   render: (args) => (
-    <div className="space-y-2 min-w-[300px]">
+    <div className="space-y-1.5">
       <Label htmlFor="password">Password</Label>
-      <PasswordInput 
-        id="password"
-        placeholder="Enter your password" 
-        {...args} 
-      />
+      <PasswordInput id="password" placeholder="Enter your password" {...args} />
+    </div>
+  ),
+}
+
+export const TestToggle: Story = {
+  render: () => (
+    <div className="space-y-4">
+      <div className="space-y-1.5">
+        <Label htmlFor="test-password">Test Password Visibility Toggle</Label>
+        <PasswordInput 
+          id="test-password"
+          placeholder="Type something to test visibility"
+          helperText="Click the eye icon to toggle visibility"
+        />
+      </div>
     </div>
   ),
 }

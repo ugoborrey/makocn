@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Input } from '@/components/ui/input';
+import { PasswordInput } from '@/components/ui/password-input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 
@@ -44,13 +45,6 @@ export const WithLabel: Story = {
       <Input id="email" type="email" placeholder="Enter your email" {...args} />
     </div>
   ),
-};
-
-export const Password: Story = {
-  args: {
-    type: 'password',
-    placeholder: 'Enter your password',
-  },
 };
 
 export const Disabled: Story = {
@@ -110,9 +104,8 @@ export const FormExample: Story = {
       
       <div className="space-y-1.5">
         <Label htmlFor="password">Password</Label>
-        <Input 
+        <PasswordInput 
           id="password"
-          type="password"
           placeholder="••••••••" 
           state="success"
           helperText="Strong password ✓"
@@ -121,9 +114,8 @@ export const FormExample: Story = {
       
       <div className="space-y-1.5">
         <Label htmlFor="confirm">Confirm Password</Label>
-        <Input 
+        <PasswordInput 
           id="confirm"
-          type="password"
           placeholder="••••••••" 
           state="warning"
           helperText="Passwords match but could be stronger"
@@ -164,15 +156,6 @@ export const ValidationStates: Story = {
       </div>
       
       <div className="space-y-1.5">
-        <Label>Success State</Label>
-        <Input 
-          placeholder="Enter your password" 
-          state="success"
-          helperText="Password meets all requirements"
-        />
-      </div>
-      
-      <div className="space-y-1.5">
         <Label>Warning State</Label>
         <Input 
           placeholder="Enter your username" 
@@ -193,15 +176,6 @@ export const ErrorVariations: Story = {
           type="email"
           placeholder="john@example.com" 
           error="Email is required"
-        />
-      </div>
-      
-      <div className="space-y-1.5">
-        <Label>Error Boolean (No Message)</Label>
-        <Input 
-          type="password"
-          placeholder="Enter password" 
-          error={true}
         />
       </div>
       

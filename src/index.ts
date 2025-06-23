@@ -1,6 +1,9 @@
 // Mako Component Library
 // Main entry point for all exports
 
+// Styles (import this in your consuming project)
+import './styles.css'
+
 // UI Components
 export * from './components/ui/alert'
 export * from './components/ui/alert-banner'

@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/index.ts', 'src/styles.css'],
   format: ['cjs', 'esm'],
   dts: {
     compilerOptions: {
@@ -12,6 +12,9 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   tsconfig: 'tsconfig.json',
+  loader: {
+    '.css': 'copy',
+  },
   external: [
     'react',
     'react-dom',

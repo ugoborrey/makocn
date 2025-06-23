@@ -30,6 +30,9 @@ var __objRest = (source, exclude) => {
   return target;
 };
 
+// src/index.ts
+import "./styles.css";
+
 // src/components/ui/alert.tsx
 import * as React2 from "react";
 import { cva } from "class-variance-authority";

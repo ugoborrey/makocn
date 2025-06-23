@@ -121,6 +121,7 @@ __export(index_exports, {
   useFileInput: () => useFileInput
 });
 module.exports = __toCommonJS(index_exports);
+var import_styles = require("./styles.css");
 
 // src/components/ui/alert.tsx
 var React2 = __toESM(require("react"));

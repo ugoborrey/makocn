@@ -150,7 +150,7 @@ export const Sizes: Story = {
   render: (args) => (
     <div className="space-y-4">
       <div className="space-y-1.5">
-        <Label>Small Size</Label>
+        <Label>Small Size (32px)</Label>
         <Select {...args}>
           <SelectTrigger size="sm" className="w-[180px]">
             <SelectValue placeholder="Small select" />
@@ -164,10 +164,38 @@ export const Sizes: Story = {
       </div>
       
       <div className="space-y-1.5">
-        <Label>Default Size</Label>
+        <Label>Default Size (40px)</Label>
         <Select {...args}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger size="default" className="w-[180px]">
             <SelectValue placeholder="Default select" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+            <SelectItem value="option3">Option 3</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      
+      <div className="space-y-1.5">
+        <Label>Large Size (48px)</Label>
+        <Select {...args}>
+          <SelectTrigger size="lg" className="w-[180px]">
+            <SelectValue placeholder="Large select" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+            <SelectItem value="option3">Option 3</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      
+      <div className="space-y-1.5">
+        <Label>Touch Size (44px)</Label>
+        <Select {...args}>
+          <SelectTrigger size="touch" className="w-[180px]">
+            <SelectValue placeholder="Touch select" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="option1">Option 1</SelectItem>

@@ -102,7 +102,7 @@ export const Closable: Story = {
       return (
         <div className="text-center p-4">
           <p className="text-gray-500 mb-2">Alert was closed</p>
-          <Button onClick={() => setIsVisible(true)} size="sm">
+          <Button onClick={() => setIsVisible(true)}>
             Show Alert Again
           </Button>
         </div>
@@ -201,7 +201,7 @@ export const AllVariants: Story = {
     return (
       <div className="space-y-4">
         <div className="text-center mb-6">
-          <Button onClick={resetAlerts} size="sm">
+          <Button onClick={resetAlerts}>
             Reset All Alerts
           </Button>
         </div>

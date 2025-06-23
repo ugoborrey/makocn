@@ -76,11 +76,11 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
         {/* Content */}
         <div className="flex-1 min-w-0">
           {title && (
-            <div className="font-semibold text-sm mb-1">
+            <div className="font-semibold text-base mb-1">
               {title}
             </div>
           )}
-          <AlertDescription className="text-sm leading-relaxed">
+          <AlertDescription className="leading-relaxed text-base">
             {description}
           </AlertDescription>
         </div>
@@ -89,7 +89,6 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
         {action && (
           <div className="flex-shrink-0 ml-3">
             <Button
-              size="sm"
               variant={action.variant || 'outline'}
               onClick={action.onClick}
             >
@@ -103,9 +102,7 @@ const AlertBanner: React.FC<AlertBannerProps> = ({
           <div className="flex-shrink-0 ml-2">
             <Button
               variant="ghost"
-              size="sm"
               onClick={onClose}
-              className="h-6 w-6 p-0 hover:bg-black/5"
               aria-label="Close alert"
               icon={<X className="h-4 w-4" />}
             />

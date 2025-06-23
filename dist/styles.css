@@ -1682,13 +1682,6 @@
       }
     }
   }
-  .hover\:bg-black\/5 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in oklab, #1A1A1A 5%, transparent);
-      }
-    }
-  }
   .hover\:bg-blue-50 {
     &:hover {
       @media (hover: hover) {

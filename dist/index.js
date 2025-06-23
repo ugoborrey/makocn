@@ -307,10 +307,9 @@ var AlertBanner = ({
 }) => {
   const config = variantConfig[variant];
   const displayIcon = icon || config.icon;
-  return /* @__PURE__ */ import_react.default.createElement(Alert, { className: `relative ${config.className} ${className}` }, /* @__PURE__ */ import_react.default.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-shrink-0 mt-0.5" }, displayIcon), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-1 min-w-0" }, title && /* @__PURE__ */ import_react.default.createElement("div", { className: "font-semibold text-sm mb-1" }, title), /* @__PURE__ */ import_react.default.createElement(AlertDescription, { className: "text-sm leading-relaxed" }, description)), action && /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-shrink-0 ml-3" }, /* @__PURE__ */ import_react.default.createElement(
+  return /* @__PURE__ */ import_react.default.createElement(Alert, { className: `relative ${config.className} ${className}` }, /* @__PURE__ */ import_react.default.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-shrink-0 mt-0.5" }, displayIcon), /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-1 min-w-0" }, title && /* @__PURE__ */ import_react.default.createElement("div", { className: "font-semibold text-base mb-1" }, title), /* @__PURE__ */ import_react.default.createElement(AlertDescription, { className: "leading-relaxed text-base" }, description)), action && /* @__PURE__ */ import_react.default.createElement("div", { className: "flex-shrink-0 ml-3" }, /* @__PURE__ */ import_react.default.createElement(
     Button,
     {
-      size: "sm",
       variant: action.variant || "outline",
       onClick: action.onClick
     },
@@ -319,9 +318,7 @@ var AlertBanner = ({
     Button,
     {
       variant: "ghost",
-      size: "sm",
       onClick: onClose,
-      className: "h-6 w-6 p-0 hover:bg-black/5",
       "aria-label": "Close alert",
       icon: /* @__PURE__ */ import_react.default.createElement(import_lucide_react2.X, { className: "h-4 w-4" })
     }

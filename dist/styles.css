@@ -840,6 +840,9 @@
   .rounded-\[4px\] {
     border-radius: 4px;
   }
+  .rounded-\[var\(--radius-lg\)\] {
+    border-radius: var(--radius-lg);
+  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -2256,6 +2259,10 @@
 }
 :root {
   --radius: 0.25rem;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
   --background: var(--color-white);
   --foreground: var(--color-gray-950);
   --card: var(--color-white);

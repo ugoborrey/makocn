@@ -2,38 +2,10 @@
 
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
-import localFont from "next/font/local"
 import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
-
-const rubixMC = localFont({
-  src: [
-    {
-      path: '../../app/fonts/RubixMC-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../app/fonts/RubixMC-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../app/fonts/RubixMC-SemiBold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../app/fonts/RubixMC-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: "--font-rubix-mc",
-  display: 'swap',
-})
 
 function AlertDialog({
   ...props
@@ -94,7 +66,6 @@ function AlertDialogContent({
           "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-xl border p-6 shadow-lg duration-200 sm:max-w-lg",
           // Mobile override: Bottom sheet
           "max-sm:bottom-0 max-sm:top-auto max-sm:left-0 max-sm:right-0 max-sm:translate-x-0 max-sm:translate-y-0 max-sm:max-w-none max-sm:rounded-t-2xl max-sm:rounded-b-none max-sm:data-[state=closed]:zoom-out-100 max-sm:data-[state=open]:zoom-in-100 max-sm:data-[state=closed]:slide-out-to-bottom max-sm:data-[state=open]:slide-in-from-bottom",
-          rubixMC.className,
           className
         )}
         {...props}

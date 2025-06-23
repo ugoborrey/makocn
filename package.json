@@ -1,6 +1,6 @@
 {
   "name": "makocn",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Mako Component Library - A modern React component library built with Tailwind CSS and Radix UI",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

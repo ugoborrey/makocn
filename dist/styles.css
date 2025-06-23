@@ -2381,25 +2381,25 @@
   --ring: var(--color-blue-500);
 }
 .bg-popover {
-  background-color: hsl(var(--popover));
+  background-color: var(--popover);
 }
 .bg-accent {
-  background-color: hsl(var(--accent));
+  background-color: var(--accent);
 }
 .bg-transparent {
   background-color: transparent;
 }
 .bg-border {
-  background-color: hsl(var(--border));
+  background-color: var(--border);
 }
 .text-popover-foreground {
-  color: hsl(var(--popover-foreground));
+  color: var(--popover-foreground);
 }
 .text-accent-foreground {
-  color: hsl(var(--accent-foreground));
+  color: var(--accent-foreground);
 }
 .text-muted-foreground {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 .shadow-xs {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -2408,16 +2408,19 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .focus:bg-accent:focus {
-  background-color: hsl(var(--accent));
+  background-color: var(--accent);
 }
 .focus:text-accent-foreground:focus {
-  color: hsl(var(--accent-foreground));
+  color: var(--accent-foreground);
 }
 .focus-visible\:border-ring:focus-visible {
-  border-color: hsl(var(--ring));
+  border-color: var(--ring);
 }
 .focus-visible\:ring-ring\/50:focus-visible {
-  --tw-ring-color: hsl(var(--ring) / 0.5);
+  --tw-ring-color: var(--ring);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-ring-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
 }
 .focus-visible\:ring-\[3px\]:focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -2428,10 +2431,10 @@
   border-width: 1px;
 }
 .border-input {
-  border-color: hsl(var(--input));
+  border-color: var(--input);
 }
 .border-destructive {
-  border-color: hsl(var(--destructive));
+  border-color: var(--destructive);
 }
 .rounded-lg {
   border-radius: calc(var(--radius) + 2px);
@@ -2587,7 +2590,7 @@
   animation: slide-in-from-left 150ms ease-out;
 }
 .data-\[placeholder\]\:text-muted-foreground[data-placeholder] {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 .data-\[disabled\]\:pointer-events-none[data-disabled] {
   pointer-events: none;
@@ -2612,19 +2615,31 @@
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .aria-invalid\:ring-destructive\/20[aria-invalid="true"] {
-  --tw-ring-color: hsl(var(--destructive) / 0.2);
+  --tw-ring-color: var(--destructive);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-ring-color: color-mix(in srgb, var(--destructive) 20%, transparent);
+  }
 }
 .aria-invalid\:border-destructive[aria-invalid="true"] {
-  border-color: hsl(var(--destructive));
+  border-color: var(--destructive);
 }
 .dark\:aria-invalid\:ring-destructive\/40:is(.dark *)[aria-invalid="true"] {
-  --tw-ring-color: hsl(var(--destructive) / 0.4);
+  --tw-ring-color: var(--destructive);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-ring-color: color-mix(in srgb, var(--destructive) 40%, transparent);
+  }
 }
 .dark\:bg-input\/30:is(.dark *) {
-  background-color: hsl(var(--input) / 0.3);
+  background-color: var(--input);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in srgb, var(--input) 30%, transparent);
+  }
 }
 .dark\:hover\:bg-input\/50:hover:is(.dark *) {
-  background-color: hsl(var(--input) / 0.5);
+  background-color: var(--input);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in srgb, var(--input) 50%, transparent);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

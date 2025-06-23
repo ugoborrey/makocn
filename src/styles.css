@@ -153,11 +153,11 @@
 
 /* Backgrounds */
 .bg-popover {
-  background-color: hsl(var(--popover));
+  background-color: var(--popover);
 }
 
 .bg-accent {
-  background-color: hsl(var(--accent));
+  background-color: var(--accent);
 }
 
 .bg-transparent {
@@ -165,20 +165,20 @@
 }
 
 .bg-border {
-  background-color: hsl(var(--border));
+  background-color: var(--border);
 }
 
 /* Text colors */
 .text-popover-foreground {
-  color: hsl(var(--popover-foreground));
+  color: var(--popover-foreground);
 }
 
 .text-accent-foreground {
-  color: hsl(var(--accent-foreground));
+  color: var(--accent-foreground);
 }
 
 .text-muted-foreground {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 
 /* Shadows */
@@ -192,19 +192,19 @@
 
 /* Focus states */
 .focus:bg-accent:focus {
-  background-color: hsl(var(--accent));
+  background-color: var(--accent);
 }
 
 .focus:text-accent-foreground:focus {
-  color: hsl(var(--accent-foreground));
+  color: var(--accent-foreground);
 }
 
 .focus-visible\:border-ring:focus-visible {
-  border-color: hsl(var(--ring));
+  border-color: var(--ring);
 }
 
 .focus-visible\:ring-ring\/50:focus-visible {
-  --tw-ring-color: hsl(var(--ring) / 0.5);
+  --tw-ring-color: color-mix(in srgb, var(--ring) 50%, transparent);
 }
 
 .focus-visible\:ring-\[3px\]:focus-visible {
@@ -219,11 +219,11 @@
 }
 
 .border-input {
-  border-color: hsl(var(--input));
+  border-color: var(--input);
 }
 
 .border-destructive {
-  border-color: hsl(var(--destructive));
+  border-color: var(--destructive);
 }
 
 /* Rounded corners */
@@ -416,7 +416,7 @@
 
 /* Data attribute styles */
 .data-\[placeholder\]\:text-muted-foreground[data-placeholder] {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
 }
 
 .data-\[disabled\]\:pointer-events-none[data-disabled] {
@@ -450,21 +450,21 @@
 
 /* ARIA states for destructive styling */
 .aria-invalid\:ring-destructive\/20[aria-invalid="true"] {
-  --tw-ring-color: hsl(var(--destructive) / 0.2);
+  --tw-ring-color: color-mix(in srgb, var(--destructive) 20%, transparent);
 }
 
 .aria-invalid\:border-destructive[aria-invalid="true"] {
-  border-color: hsl(var(--destructive));
+  border-color: var(--destructive);
 }
 
 .dark\:aria-invalid\:ring-destructive\/40:is(.dark *)[aria-invalid="true"] {
-  --tw-ring-color: hsl(var(--destructive) / 0.4);
+  --tw-ring-color: color-mix(in srgb, var(--destructive) 40%, transparent);
 }
 
 .dark\:bg-input\/30:is(.dark *) {
-  background-color: hsl(var(--input) / 0.3);
+  background-color: color-mix(in srgb, var(--input) 30%, transparent);
 }
 
 .dark\:hover\:bg-input\/50:hover:is(.dark *) {
-  background-color: hsl(var(--input) / 0.5);
+  background-color: color-mix(in srgb, var(--input) 50%, transparent);
 } 

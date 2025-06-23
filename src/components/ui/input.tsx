@@ -68,7 +68,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           aria-invalid={actualState === "error"}
           className={cn(
             inputVariants({ size, state: actualState }),
-            "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+            "focus-visible:border-ring font-medium focus-visible:ring-ring/50 focus-visible:ring-[3px]",
             actualState === "error" && "focus-visible:border-destructive focus-visible:ring-destructive/20",
             actualState === "success" && "focus-visible:border-green-500 focus-visible:ring-green-500/20",
             actualState === "warning" && "focus-visible:border-yellow-500 focus-visible:ring-yellow-500/20",

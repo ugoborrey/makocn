@@ -1171,7 +1171,7 @@ var Input = React10.forwardRef(
         "aria-invalid": actualState === "error",
         className: cn(
           inputVariants({ size, state: actualState }),
-          "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+          "focus-visible:border-ring font-medium focus-visible:ring-ring/50 focus-visible:ring-[3px]",
           actualState === "error" && "focus-visible:border-destructive focus-visible:ring-destructive/20",
           actualState === "success" && "focus-visible:border-green-500 focus-visible:ring-green-500/20",
           actualState === "warning" && "focus-visible:border-yellow-500 focus-visible:ring-yellow-500/20",
@@ -1197,7 +1197,7 @@ function Label(_a) {
     __spreadValues({
       "data-slot": "label",
       className: cn(
-        "flex items-center gap-2 leading-none font-medium select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+        "flex items-center gap-2 leading-none font-regular select-none cursor-pointer group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
         className
       )
     }, props)
@@ -1271,7 +1271,7 @@ var PasswordInput = (0, import_react4.forwardRef)((_a, ref) => {
       "aria-invalid": actualState === "error",
       className: cn(
         inputVariants({ size, state: actualState }),
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] pe-9",
+        "focus-visible:border-ring focus-visible:ring-ring/50 font-medium focus-visible:ring-[3px] pe-9",
         actualState === "error" && "focus-visible:border-destructive focus-visible:ring-destructive/20",
         actualState === "success" && "focus-visible:border-green-500 focus-visible:ring-green-500/20",
         actualState === "warning" && "focus-visible:border-yellow-500 focus-visible:ring-yellow-500/20",
@@ -1394,7 +1394,7 @@ function SelectTrigger(_a) {
       "data-slot": "select-trigger",
       "data-size": size,
       className: cn(
-        "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-lg border bg-transparent whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=sm]:h-8 data-[size=sm]:px-3 data-[size=sm]:py-1 data-[size=sm]:text-sm data-[size=default]:h-10 data-[size=default]:px-4 data-[size=default]:py-2 data-[size=default]:text-base data-[size=lg]:h-12 data-[size=lg]:px-6 data-[size=lg]:py-3 data-[size=lg]:text-lg data-[size=touch]:h-11 data-[size=touch]:px-6 data-[size=touch]:py-3 data-[size=touch]:text-base *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "border-input data-[placeholder]:text-muted-foreground font-medium [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-lg border bg-transparent whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=sm]:h-8 data-[size=sm]:px-3 data-[size=sm]:py-1 data-[size=sm]:text-sm data-[size=default]:h-10 data-[size=default]:px-4 data-[size=default]:py-2 data-[size=default]:text-base data-[size=lg]:h-12 data-[size=lg]:px-6 data-[size=lg]:py-3 data-[size=lg]:text-lg data-[size=touch]:h-11 data-[size=touch]:px-6 data-[size=touch]:py-3 data-[size=touch]:text-base *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )
     }, props),

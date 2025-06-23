@@ -32,6 +32,7 @@
     --color-gray-800: #59647A;
     --color-gray-900: #4C5463;
     --color-gray-950: #2C303A;
+    --color-neutral-200: oklch(92.2% 0 0);
     --color-white: #FFFFFF;
     --spacing: 0.25rem;
     --container-xs: 20rem;
@@ -925,6 +926,9 @@
   }
   .border-green-700 {
     border-color: #009550;
+  }
+  .border-neutral-200 {
+    border-color: var(--color-neutral-200);
   }
   .border-red-200 {
     border-color: #FBD1CD;

@@ -453,7 +453,7 @@ function Card(_a) {
     __spreadValues({
       "data-slot": "card",
       className: cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-neutral-200 py-6 shadow-sm",
         className
       )
     }, props)

@@ -1,17 +1,48 @@
 {
   "name": "makocn",
   "version": "0.1.0",
-  "private": true,
+  "description": "Mako Component Library - A modern React component library built with Tailwind CSS and Radix UI",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "tailwind",
+    "design-system",
+    "typescript"
+  ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsup",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "prepublishOnly": "npm run build",
+    "publish:npm": "npm publish"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "makocn": "^0.1.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "peerDependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-checkbox": "^1.3.2",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -19,15 +50,12 @@
     "@radix-ui/react-radio-group": "^1.3.7",
     "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "lucide-react": "^0.517.0",
+    "lucide-react": "^0.515.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-aria-components": "^1.10.1",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.3.1"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
@@ -50,6 +78,7 @@
     "playwright": "^1.53.0",
     "storybook": "^9.0.12",
     "tailwindcss": "^4",
+    "tsup": "^8.0.0",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5",
     "vitest": "^3.2.4"

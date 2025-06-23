@@ -1,0 +1,48 @@
+# Development files
+src/
+stories/
+.storybook/
+.next/
+node_modules/
+
+# Config files
+*.config.*
+tsconfig.json
+tailwind.config.js
+postcss.config.mjs
+next.config.ts
+eslint.config.mjs
+components.json
+vitest.config.ts
+vitest.shims.d.ts
+
+# Documentation and project files
+PROJECT_SETUP.md
+INPUT_VALIDATION_STRATEGY.md
+
+# Build artifacts
+.turbo/
+coverage/
+storybook-static/
+
+# Environment and OS files
+.env*
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+chromatic.config.json
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Include only dist and README
+!dist/
+!README.md 
